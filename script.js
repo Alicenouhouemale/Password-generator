@@ -15,21 +15,6 @@ function getRandomItem(list) {
 }
 
 function generatePassword() {
-
-  // var userInput = window.prompt("How long do you want your password to be?")
-
-  // var passwordLength = parseInt(userInput)
-
-  // if (isNaN(passwordLength)) {
-  //   window.alert("That's not a number!")
-  //   return
-  // }
-
-  
-  // if (passwordLength < 8 || passwordLength > 128) {
-  //   window.alert("Password lenght must be between 8 and 128 characters")
-  //   return
-  // }
     
   while (true) {
 
@@ -100,7 +85,11 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  if (password) return
+
+  if (password) {
   passwordText.value = password;
+  }
 
 }
 
