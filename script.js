@@ -11,13 +11,15 @@ function randomInt(min, max) {
 }
 
 function getRandomItem(list) {
-  return list[randomInt(0, list.length)]
+  return list[randomInt(list.length)]
 }
 
 function generatePassword() {
+
   var userInput = window.prompt("How long do you want your password to be?")
 
   var passwordLength = parseInt(userInput)
+
   if (isNaN(passwordLength)) {
     window.alert("That's not a number!")
     return
@@ -36,7 +38,7 @@ function generatePassword() {
   var numberList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   var symbolsList = ["!", "@", "#", "$", "%", "^", "&", "*"]
   var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var uppercase = []
+  var uppercaseList = []
 
   var optionCart = []
   
@@ -59,6 +61,8 @@ function generatePassword() {
   if (userWantsUppercase === true) {
     optionCart.push(uppercaseList)
   }
+  if (optionCart.length === 0)
+  optionCart.push(lowercaseList)
 
   var generatePassword = ""
 
@@ -67,7 +71,8 @@ function generatePassword() {
     var randomChar = getRandomItem(randomList)
     generatePassword += randomChar
   }
-  console.log(generatePassword)
+  
+  return generatePassword
 }
 
 // Write password to the #password input
