@@ -16,18 +16,38 @@ function getRandomItem(list) {
 
 function generatePassword() {
 
-  var userInput = window.prompt("How long do you want your password to be?")
+  // var userInput = window.prompt("How long do you want your password to be?")
 
-  var passwordLength = parseInt(userInput)
+  // var passwordLength = parseInt(userInput)
 
-  if (isNaN(passwordLength)) {
-    window.alert("That's not a number!")
-    return
-  }
+  // if (isNaN(passwordLength)) {
+  //   window.alert("That's not a number!")
+  //   return
+  // }
 
-  if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Password lenght must be between 8 and 128 characters")
-    return
+  
+  // if (passwordLength < 8 || passwordLength > 128) {
+  //   window.alert("Password lenght must be between 8 and 128 characters")
+  //   return
+  // }
+    
+  while (true) {
+
+    var userInput = window.prompt("How long do you want your password to be?")
+    //user exited prompt
+    if (userInput === null) {
+      return
+    }
+    var passwordLength = parseInt(userInput)
+
+    if (isNaN(passwordLength)) {
+      window.alert("That's not a number!")
+    }else if (passwordLength < 8 || passwordLength > 128) {
+      window.alert("Invalid password length. Length should be between 8 and 128 characters.")
+    }else {
+      break
+    }
+
   }
 
   var userWantsNumbers = window.confirm("Would you like to include numbers in your password?")
