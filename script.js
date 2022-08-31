@@ -85,11 +85,12 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  if (password) return
+  passwordText.value = password
+  // if (password) return
 
-  if (password) {
-  passwordText.value = password;
-  }
+  // if (password) {
+  // passwordText.value = password;
+  // }
 
 }
 
